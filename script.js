@@ -13,7 +13,7 @@ const translations = {
         sms_phone: "Phone Number", sms_msg: "Message", loc_lat: "Latitude", loc_lng: "Longitude"
     },
     ko: {
-        title: "QR 스튜디오", subtitle: "나만의 특별한 QR 코드를 디자인하세요.",
+        title: "QR Studio", subtitle: "나만의 특별한 QR 코드를 디자인하세요.",
         data_type: "데이터 타입", type_url: "웹사이트 (URL)", type_wifi: "와이파이 (WiFi)", type_vcard: "연락처 (vCard)", type_event: "일정 (Event)", type_email: "이메일", type_sms: "문자 메시지", type_location: "위치 (Location)",
         target_url: "타겟 URL", dot_color: "패턴 색상", bg_color: "배경 색상", pattern_style: "패턴 스타일",
         stan_square: "기본 사각형", mod_dots: "모던 도트", smo_rounded: "부드러운 모서리", classy: "클래식", cla_rounded: "클래식 라운드",
@@ -26,7 +26,7 @@ const translations = {
         sms_phone: "전화번호", sms_msg: "메시지 내용", loc_lat: "위도", loc_lng: "경도"
     },
     ja: {
-        title: "QRスタジオ", subtitle: "際立つQRコードをデザインしましょう。",
+        title: "QR Studio", subtitle: "際立つQRコードをデザインしましょう。",
         data_type: "データタイプ", type_url: "ウェブサイト (URL)", type_wifi: "Wi-Fi", type_vcard: "連絡先 (vCard)", type_event: "イベント (Event)", type_email: "メール", type_sms: "SMS", type_location: "位置情報 (Location)",
         target_url: "ターゲットURL", dot_color: "ドットの色", bg_color: "背景色", pattern_style: "パターンスタイル",
         stan_square: "標準の四角", mod_dots: "モダンドット", smo_rounded: "滑らかな丸み", classy: "クラッシー", cla_rounded: "クラッシーラウンド",
@@ -39,7 +39,7 @@ const translations = {
         sms_phone: "電話番号", sms_msg: "メッセージ", loc_lat: "緯度", loc_lng: "経度"
     },
     zh: {
-        title: "QR 工作室", subtitle: "设计脱颖而出的二维码。",
+        title: "QR Studio", subtitle: "设计脱颖而出的二维码。",
         data_type: "数据类型", type_url: "网址 (URL)", type_wifi: "无线网 (WiFi)", type_vcard: "名片 (vCard)", type_event: "事件 (Event)", type_email: "电子邮件", type_sms: "短信", type_location: "位置 (Location)",
         target_url: "目标 URL", dot_color: "图案颜色", bg_color: "背景颜色", pattern_style: "图案样式",
         stan_square: "标准方块", mod_dots: "现代点状", smo_rounded: "平滑圆角", classy: "经典款式", cla_rounded: "经典圆角",
@@ -52,7 +52,7 @@ const translations = {
         sms_phone: "电话号码", sms_msg: "短信内容", loc_lat: "纬度", loc_lng: "经度"
     },
     fr: {
-        title: "Studio QR", subtitle: "Créez un code QR qui se démarque.",
+        title: "QR Studio", subtitle: "Créez un code QR qui se démarque.",
         data_type: "Type de Données", type_url: "URL", type_wifi: "WiFi", type_vcard: "Contact (vCard)", type_event: "Événement (Event)", type_email: "Email", type_sms: "SMS", type_location: "Emplacement (Location)",
         target_url: "URL Cible", dot_color: "Couleur Points", bg_color: "Couleur de Fond", pattern_style: "Style de Motif",
         stan_square: "Carré Standard", mod_dots: "Points Modernes", smo_rounded: "Arrondi Lisse", classy: "Élégant", cla_rounded: "Élégant Arrondi",
