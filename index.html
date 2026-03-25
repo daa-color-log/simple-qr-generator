@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Styling QR Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
+    <div class="container layout-split">
+        <div class="controls-panel">
+            <header>
+                <div class="header-top">
+                    <h1 data-i18n="title">QR Studio</h1>
+                    <select id="language-select" class="lang-selector">
+                        <option value="en">English</option>
+                        <option value="ko">한국어</option>
+                        <option value="ja">日本語</option>
+                        <option value="zh">中文</option>
+                        <option value="fr">Français</option>
+                    </select>
+                </div>
+                <p data-i18n="subtitle">Design a QR code that stands out.</p>
+            </header>
+            
+            <div class="control-group" style="margin-bottom: 24px;">
+                <label for="data-type" data-i18n="data_type">Data Type</label>
+                <select id="data-type">
+                    <option value="url" data-i18n="type_url">URL</option>
+                    <option value="wifi" data-i18n="type_wifi">WiFi</option>
+                    <option value="vcard" data-i18n="type_vcard">vCard (Contact)</option>
+                    <option value="event" data-i18n="type_event">Event (Calendar)</option>
+                </select>
+            </div>
+
+            <div id="dynamic-inputs">
+                <!-- URL -->
+                <div class="input-section active" data-type="url">
+                    <div class="control-group">
+                        <label for="url-input" data-i18n="target_url">Target URL</label>
+                        <input type="url" id="url-input" placeholder="https://example.com" autocomplete="off" value="https://example.com">
+                    </div>
+                </div>
+                
+                <!-- WiFi -->
+                <div class="input-section" data-type="wifi">
+                    <div class="control-group">
+                        <label data-i18n="wifi_ssid">Network Name (SSID)</label>
+                        <input type="text" id="wifi-ssid" placeholder="MyNetwork">
+                    </div>
+                    <div class="control-group">
+                        <label data-i18n="wifi_password">Password</label>
+                        <input type="text" id="wifi-password" placeholder="SecretPassword123">
+                    </div>
+                    <div class="control-group">
+                        <label data-i18n="wifi_enc">Encryption</label>
+                        <select id="wifi-encryption">
+                            <option value="WPA">WPA/WPA2</option>
+                            <option value="WEP">WEP</option>
+                            <option value="nopass" data-i18n="wifi_none">None</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- vCard -->
+                <div class="input-section" data-type="vcard">
+                    <div class="control-group">
+                        <label data-i18n="vcard_name">Full Name</label>
+                        <input type="text" id="vcard-name" placeholder="John Doe">
+                    </div>
+                    <div class="control-group">
+                        <label data-i18n="vcard_phone">Phone Number</label>
+                        <input type="tel" id="vcard-phone" placeholder="+1 234 567 8900">
+                    </div>
+                    <div class="control-group">
+                        <label data-i18n="vcard_email">Email</label>
+                        <input type="email" id="vcard-email" placeholder="john@example.com">
+                    </div>
+                    <div class="control-group">
+                        <label data-i18n="vcard_website">Website</label>
+                        <input type="url" id="vcard-website" placeholder="https://johndoe.com">
+                    </div>
+                </div>
+                
+                <!-- Event -->
+                <div class="input-section" data-type="event">
+                    <div class="control-group">
+                        <label data-i18n="event_title">Event Title</label>
+                        <input type="text" id="event-title" placeholder="Birthday Party">
+                    </div>
+                    <div class="control-group">
+                        <label data-i18n="event_start">Start Time</label>
+                        <input type="datetime-local" id="event-start">
+                    </div>
+                    <div class="control-group">
+                        <label data-i18n="event_end">End Time</label>
+                        <input type="datetime-local" id="event-end">
+                    </div>
+                    <div class="control-group">
+                        <label data-i18n="event_location">Location</label>
+                        <input type="text" id="event-location" placeholder="123 Party St.">
+                    </div>
+                </div>
+
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 8px 0;">
+
+            <div class="settings-grid">
+                <div class="control-group">
+                    <label for="color-input" data-i18n="dot_color">Dot Color</label>
+                    <div class="color-picker-wrap">
+                        <input type="color" id="color-input" value="#ffffff">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="bg-color-input" data-i18n="bg_color">Background</label>
+                    <div class="color-picker-wrap">
+                        <input type="color" id="bg-color-input" value="#1e293b">
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="dot-style" data-i18n="pattern_style">Pattern Style</label>
+                <select id="dot-style">
+                    <option value="square" data-i18n="stan_square">Standard Square</option>
+                    <option value="dots" data-i18n="mod_dots">Modern Dots</option>
+                    <option value="rounded" data-i18n="smo_rounded" selected>Smooth Rounded</option>
+                    <option value="classy" data-i18n="classy">Classy</option>
+                    <option value="classy-rounded" data-i18n="cla_rounded">Classy Rounded</option>
+                    <option value="extra-rounded" data-i18n="ext_rounded">Extra Rounded</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="corner-style" data-i18n="corner_style">Corner Style</label>
+                <select id="corner-style">
+                    <option value="square" data-i18n="square">Square</option>
+                    <option value="dot" data-i18n="dot">Dot</option>
+                    <option value="extra-rounded" data-i18n="ext_rounded" selected>Extra Rounded</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="logo-upload" data-i18n="upload_logo">Upload Logo (Center)</label>
+                <div class="file-upload-wrapper">
+                    <input type="file" id="logo-upload" accept="image/png, image/jpeg, image/svg+xml">
+                    <button class="file-upload-btn" id="upload-trigger-btn" data-i18n="choose_image">Choose Image</button>
+                    <span id="logo-filename" data-i18n="no_file">No file chosen</span>
+                </div>
+                <button id="remove-logo-btn" class="sm-btn" style="display: none; margin-top: 8px;" data-i18n="remove_logo">Remove Logo</button>
+            </div>
+        </div>
+
+        <div class="preview-panel">
+            <div class="qr-wrapper" id="qr-wrapper">
+                <div id="qrcode"></div>
+            </div>
+            <div class="actions">
+                <button id="download-btn" class="primary-btn" data-i18n="download">Download High-Res QR</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
