@@ -1,22 +1,39 @@
-const CACHE_NAME = 'qr-app-v2';
+const CACHE_NAME = 'qr-app-v4';
 const ASSETS = [
-  './',
-  './index.html',
-  './style.css',
-  './script.js',
-  './icon-192.png',
-  './icon-512.png',
-  './manifest.json',
-  'https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js'
+  'index.html',
+  'style.css',
+  'script.js',
+  'icon-192.png',
+  'icon-512.png',
+  'manifest.json'
 ];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-        // use return fetch to avoid opaque responses failing cache.addAll for external resources, but for simplicity cache.addAll is fine if CORS allows, else just cache locals
-        return cache.addAll(ASSETS.filter(url => !url.startsWith('http')));
+    caches.open(CACHE_NAME).then(async (cache) => {
+      for (let asset of ASSETS) {
+        try {
+          await cache.add(asset);
+        } catch (err) {
+          console.error('Failed to cache:', asset, err);
+        }
+      }
     })
   );
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then((keyList) => {
+      return Promise.all(keyList.map((key) => {
+        if (key !== CACHE_NAME) {
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+  self.clients.claim();
 });
 
 self.addEventListener('fetch', (e) => {
