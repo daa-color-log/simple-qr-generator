@@ -1,10 +1,11 @@
-const CACHE_NAME = 'qr-app-v1';
+const CACHE_NAME = 'qr-app-v2';
 const ASSETS = [
   './',
   './index.html',
   './style.css',
   './script.js',
-  './icon.svg',
+  './icon-192.png',
+  './icon-512.png',
   './manifest.json',
   'https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js'
 ];
